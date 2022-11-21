@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+  <script src="main.js" defer></script>
+  <script src="jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="" id="tabela2">
+    <div class="container">
+      <div class="row py-3">
+        <div class="col-md-12">
+          <h5 class="">Lista de Clientes</h5>
+          <a class="btn btn-success" id="adicionar">
+            <i class="fa fa-fw fa-plus"></i> Adicionar
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table" id="tabela">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Telefone</th>
+                  <th>Cidade</th>
+                  <th>Opções</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>
+                    <a class="btn btn-warning" href="#"><i class="fa fa-fw fa-pencil"></i>&nbsp;Alterar&nbsp;</a>
+                    <a class="btn btn-danger" href="#"><i class="fa fa-fw fa-trash"></i>&nbsp;Deletar&nbsp;</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 d-none" id="formulario">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-md-8">
+          <div class="card">
+            <div class="card-header"> Cadastrar</div>
+            <div class="card-body">
+              <form id="form">
+                <div class="form-group">
+                  <label>Nome</label>
+                  <input type="text" class="form-control" data-index="new" placeholder="Nome" required="required" id="campoNome">
+                </div>
+                <div class="form-group">
+                  <label>Telefone</label>
+                  <input type="text" class="form-control" placeholder="Telefone" required="required" id="campoTelefone">
+                </div>
+                <div class="form-group">
+                  <label>Cidade</label>
+                  <input type="text" class="form-control" placeholder="Cidade" required="required" id="campoCidade">
+                </div>
+                <button type="submit" class="btn btn-primary" id="cadastrar">Salvar</button>
+                <button type="submit" class="btn btn-danger"  id="cancelar">Cancelar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" style=""></script>
+  </body>
+</html>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+<script>
+    $(document).ready(function(){
+    $('#tabela').DataTable({
+        language: {
+            lengthMenu: 'Mostrar  _MENU_ Itens por página',
+            zeroRecords: 'Não encontrado - Vazio',
+            info: 'Mostrando pagina _PAGE_ de _PAGES_',
+            infoEmpty: 'Não tem itens',
+            infoFiltered: '(Total de  _MAX_ de itens)',
+        },
+    });
+});   
+</script>
